@@ -1,10 +1,10 @@
-import express from 'express';
+import { Router, Request, Response } from 'express';
 import axios from 'axios';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
-const router = express.Router();
+const router = Router();
 
 interface ChatResponse {
   choices: Array<{
@@ -15,7 +15,14 @@ interface ChatResponse {
   }>;
 }
 
-router.post('/chat', async (req: express.Request, res: express.Response) => {
+interface ChatRequest {
+  messages: Array<{
+    role: string;
+    content: string;
+  }>;
+}
+
+router.post('/chat', async (req: Request<{}, {}, ChatRequest>, res: Response) => {
   try {
     const { messages } = req.body;
     const apiKey = process.env.OPENROUTER_API_KEY;

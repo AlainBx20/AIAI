@@ -7,7 +7,7 @@
     "start": "node dist/server.js",
     "dev": "nodemon src/server.ts",
     "build": "tsc",
-    "watch": "tsc -w"
+    "install-types": "npm install --save-dev @types/express @types/cors @types/node @types/dotenv @types/axios"
   },
   "keywords": [],
   "author": "",
@@ -16,14 +16,14 @@
     "axios": "^1.6.7",
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
-    "dotenv": "^16.4.1",
+    "dotenv": "^16.4.5",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.2"
   },
   "devDependencies": {
-    "@types/axios": "^0.9.36",
+    "@types/axios": "^0.14.4",
     "@types/cors": "^2.8.17",
-    "@types/dotenv": "^6.1.1",
+    "@types/dotenv": "^8.2.3",
     "@types/express": "^4.17.21",
     "@types/node": "^20.17.30",
     "nodemon": "^3.0.3",
